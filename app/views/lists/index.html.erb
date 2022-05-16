@@ -1,1 +1,17 @@
 <h1>This is an index of lists</h1>
+
+<div>
+  <ul>
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <li><%= list.name %></li>
+        <%# <button type="button"><%= link_to "Delete list", lists_path(@list), method: :delete %>
+        <%# </button> %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <button type="button"><%= link_to "Create a list", new_list_path %></button>
+</div>
